@@ -8,8 +8,11 @@ function allSearch() {
 
       for (i in result) {
         const oneCol = document.createElement("col");
+        oneCol.setAttribute("class", "col default");
         const twoCol = document.createElement("col");
+        twoCol.setAttribute("class", "col default");
         const treeCol = document.createElement("col");
+        treeCol.setAttribute("class", "col default");
 
         const img = document.createElement("img");
 
