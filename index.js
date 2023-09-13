@@ -8,7 +8,7 @@ function allSearch() {
 
       for (i in result) {
         const oneCol = document.createElement("col");
-        oneCol.setAttribute("class", "col default");
+        oneCol.setAttribute("class", "colDefault");
         const twoCol = document.createElement("col");
         twoCol.setAttribute("class", "col default");
         const treeCol = document.createElement("col");
@@ -23,7 +23,7 @@ function allSearch() {
         img.setAttribute("src", `${result[i].image}`);
 
         const name = document.createElement("p");
-        name.innerHTML += `${result[i].name}  ${result[i].id}`;
+        name.innerHTML += `${result[i].name}  ${result[i].id} `;
 
         const status = document.createElement("p");
         status.innerHTML += `${result[i].status}`;

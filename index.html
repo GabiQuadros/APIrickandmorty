@@ -13,56 +13,56 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <header>
-      <nav
-        class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark border-bottom border-body"
-        data-bs-theme="dark"
-      >
-        <div class="container-fluid">
-          <img
-            src="./assets/rickandmorty.png"
-            class="img"
-            alt="rickandmorty"
-            width="110"
-            height="120"
-          />
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-           
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-light">
-              <li class="nav-item">
-                <h3 aria-current="page">Rick and Morty</h3>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-                id="buscador" 
-              />
-              <button class="btn btn-outline-light" type="button"  onclick="search()">
-                Search
-              </button>
-            </form>
-          </div>
+  <header>
+    <nav
+      class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark border-bottom border-body"
+      data-bs-theme="dark"
+    >
+      <div class="container-fluid" >
+        <img
+          src="./assets/rickandmorty.png"
+          class="img"
+          alt="rickandmorty"
+          width="110"
+          height="120"
+        />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+         
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-light">
+            <li class="nav-item">
+              <h3 aria-current="page">Rick and Morty</h3>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              id="buscador" 
+            />
+            <button class="btn btn-outline-light" type="button"  onclick="search()">
+              Search
+            </button>
+          </form>
         </div>
-      </nav>
-    </header>
-    <div class="container text-center">
-      <div class="row" id="result" >
+      </div>
+    </nav>
+  </header>
+  <body>
+    <div class="container card">
+      <div class="row " id="result" >
         <!-- <div class="col">1 of 3</div>
         <div class="col">2 of 3</div>
         <div class="col">3 of 3</div>
