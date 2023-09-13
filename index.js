@@ -8,13 +8,13 @@ function allSearch() {
 
       for (i in result) {
         const col = document.createElement("col");
-        col.setAttribute("class", "col colDefault");
+        col.setAttribute("class", "col  colDefault");
 
         const img = document.createElement("img");
         img.setAttribute("alt", `${result[i].name}`);
         img.setAttribute("class", "imag");
         img.setAttribute("width", "150px");
-        img.setAttribute("height", "200px");
+        img.setAttribute("height", "300px");
         img.setAttribute("src", `${result[i].image}`);
 
         const name = document.createElement("p");
@@ -23,6 +23,7 @@ function allSearch() {
               </button>`;
 
         const status = document.createElement("p");
+        status.setAttribute("class", "staus");
         status.innerHTML += `${result[i].status}`;
 
         col.appendChild(img);
@@ -69,9 +70,11 @@ function search() {
           img.setAttribute("src", `${result[i].image}`);
 
           const name = document.createElement("p");
+          name.setAttribute("class", "staus");
           name.innerHTML += `${result[i].name}  ${result[i].id}`;
 
           const status = document.createElement("p");
+          status.setAttribute("class", "staus");
           status.innerHTML += `${result[i].status}`;
 
           col.appendChild(img);
@@ -79,14 +82,6 @@ function search() {
           col.appendChild(status);
 
           retorno.appendChild(col);
-
-          // oneCol.appendChild(img);
-          // twoCol.appendChild(name);
-          // treeCol.appendChild(status);
-
-          // retorno.appendChild(oneCol);
-          // retorno.appendChild(twoCol);
-          // retorno.appendChild(treeCol);
         }
       });
   } catch (e) {
@@ -122,9 +117,11 @@ function searchToButtonCard(params) {
           img.setAttribute("src", `${result[i].image}`);
 
           const name = document.createElement("p");
+          name.setAttribute("class", "staus");
           name.innerHTML += `${result[i].name}  ${result[i].id}`;
 
           const status = document.createElement("p");
+          status.setAttribute("class", "staus");
           status.innerHTML += `${result[i].status}`;
 
           col.appendChild(img);

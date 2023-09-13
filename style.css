@@ -1,20 +1,11 @@
+body {
+  background-color: rgba(17, 17, 17, 0.886);
+}
+
 .all {
   display: inline;
 }
 
-.button-card {
-  border: none;
-  background-color: rgb(255, 255, 255);
-}
-
-.button-card:hover {
-  color: blue;
-  font-size: 20px;
-  font-weight: bolder;
-}
-body {
-  background-color: rgba(17, 17, 17, 0.886);
-}
 .card {
   position: relative;
   width: 100%;
@@ -31,20 +22,47 @@ body {
   border-left: 1px solid rgba(37, 37, 37, 0.648);
   backdrop-filter: blur(5px);
   padding: 20px;
-  align-content: space-between;
+  /* align-content: space-between; */
 }
+
 .colDefault {
   width: 500px;
-  height: 350px;
-  margin: 30px;
+  height: 300px;
+  padding: 15px;
+  margin: 20px;
+  /* 
+  margin: 30px; */
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   background: #ffffff1a;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   justify-content: center;
   align-items: center;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
+}
+
+.button-card {
+  border: none;
+  background-color: #ffffff1a;
+  color: bisque;
+  margin-top: 5px;
+  word-break: word;
+}
+
+.imag {
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.button-card:hover {
+  color: blue;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.staus {
+  color: bisque;
 }
