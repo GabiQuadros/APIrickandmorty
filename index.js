@@ -7,15 +7,10 @@ function allSearch() {
       console.log(result);
 
       for (i in result) {
-        const oneCol = document.createElement("col");
-        oneCol.setAttribute("class", "col default");
-        const twoCol = document.createElement("col");
-        twoCol.setAttribute("class", "col default");
-        const treeCol = document.createElement("col");
-        treeCol.setAttribute("class", "col default");
+        const col = document.createElement("col");
+        col.setAttribute("class", "col colDefault");
 
         const img = document.createElement("img");
-
         img.setAttribute("alt", `${result[i].name}`);
         img.setAttribute("class", "imag");
         img.setAttribute("width", "150px");
@@ -23,18 +18,18 @@ function allSearch() {
         img.setAttribute("src", `${result[i].image}`);
 
         const name = document.createElement("p");
-        name.innerHTML += `${result[i].name}  ${result[i].id}`;
+        name.innerHTML += `<button  class="button-card"  type="button"  onclick="searchToButtonCard('${result[i].name}')">
+        ${result[i].name}  ${result[i].id}
+              </button>`;
 
         const status = document.createElement("p");
         status.innerHTML += `${result[i].status}`;
 
-        oneCol.appendChild(img);
-        twoCol.appendChild(name);
-        treeCol.appendChild(status);
+        col.appendChild(img);
+        col.appendChild(name);
+        col.appendChild(status);
 
-        retorno.appendChild(oneCol);
-        retorno.appendChild(twoCol);
-        retorno.appendChild(treeCol);
+        retorno.appendChild(col);
       }
     });
   } catch (error) {
@@ -47,6 +42,7 @@ function allSearch() {
 allSearch();
 
 function search() {
+  const title = document.getElementById("heder-title");
   const all = document.getElementById("allResult");
   const busca = document.getElementById("buscador");
   const retorno = document.getElementById("result");
@@ -57,16 +53,15 @@ function search() {
       .then((response) => {
         const result = response.data.results;
         all.style.display = "none";
+        title.textContent = `${result[0].name}`;
         console.log("souche");
         console.log(result);
 
         for (i in result) {
-          const oneCol = document.createElement("col");
-          const twoCol = document.createElement("col");
-          const treeCol = document.createElement("col");
+          const col = document.createElement("col");
+          col.setAttribute("class", "colDefault");
 
           const img = document.createElement("img");
-
           img.setAttribute("alt", `${result[i].name}`);
           img.setAttribute("class", "imag");
           img.setAttribute("width", "150px");
@@ -79,34 +74,19 @@ function search() {
           const status = document.createElement("p");
           status.innerHTML += `${result[i].status}`;
 
-          oneCol.appendChild(img);
-          twoCol.appendChild(name);
-          treeCol.appendChild(status);
+          col.appendChild(img);
+          col.appendChild(name);
+          col.appendChild(status);
 
-          retorno.appendChild(oneCol);
-          retorno.appendChild(twoCol);
-          retorno.appendChild(treeCol);
+          retorno.appendChild(col);
 
-          // const div = document.createElement("div");
+          // oneCol.appendChild(img);
+          // twoCol.appendChild(name);
+          // treeCol.appendChild(status);
 
-          // const element = document.createElement("img");
-          // element.setAttribute("alt", `${result[i].name}`);
-          // element.setAttribute("class", "imag");
-          // element.setAttribute("width", "150px");
-          // element.setAttribute("height", "200px");
-          // element.setAttribute("src", `${result[i].image}`);
-
-          // const name = document.createElement("p");
-          // name.innerHTML += `${result[i].name}  ${result[i].id}`;
-
-          // const status = document.createElement("p");
-          // status.innerHTML += `${result[i].status}`;
-
-          // div.appendChild(element);
-          // div.appendChild(name);
-          // div.appendChild(status);
-
-          // retorno.appendChild(div);
+          // retorno.appendChild(oneCol);
+          // retorno.appendChild(twoCol);
+          // retorno.appendChild(treeCol);
         }
       });
   } catch (e) {
@@ -116,46 +96,47 @@ function search() {
   }
 }
 
-// a desenvolver procurar  clicando no nome da foro
-function searchToButton(params) {
+function searchToButtonCard(params) {
+  const title = document.getElementById("heder-title");
+  const all = document.getElementById("allResult");
   const retorno = document.getElementById("result");
   try {
     axios
-      .get(`https://rickandmortyapi.com/api/character/?name=${params.value}`)
+      .get(`https://rickandmortyapi.com/api/character/?name=${params}`)
       .then((response) => {
         const result = response.data.results;
+        all.style.display = "none";
+        title.textContent = `${result[0].name}`;
         console.log("souche");
         console.log(result);
 
         for (i in result) {
-          const element = document.createElement("p");
-          element.innerHTML = JSON.stringify(result[i].status);
-          console.log(element);
-          retorno.appendChild(element);
+          const col = document.createElement("col");
+          col.setAttribute("class", "colDefault");
+
+          const img = document.createElement("img");
+          img.setAttribute("alt", `${result[i].name}`);
+          img.setAttribute("class", "imag");
+          img.setAttribute("width", "150px");
+          img.setAttribute("height", "200px");
+          img.setAttribute("src", `${result[i].image}`);
+
+          const name = document.createElement("p");
+          name.innerHTML += `${result[i].name}  ${result[i].id}`;
+
+          const status = document.createElement("p");
+          status.innerHTML += `${result[i].status}`;
+
+          col.appendChild(img);
+          col.appendChild(name);
+          col.appendChild(status);
+
+          retorno.appendChild(col);
         }
       });
-  } catch (e) {
+  } catch (error) {
     const element = document.createElement("p");
     element.innerText = `Dados não encontrados ${e}`;
     retorno.appendChild(element);
   }
 }
-
-// apenas função teste
-// function teste(params) {
-//   const retorno = document.getElementById("allResult");
-//   const element = document.createElement("img");
-//   element.setAttribute("alt", `${params}`);
-//   element.setAttribute("class", "imag");
-//   element.setAttribute("width", "150px");
-//   element.setAttribute("height", "200px");
-//   element.setAttribute(
-//     "src",
-//     `https://rickandmortyapi.com/api/character/avatar/1.jpeg`
-//   );
-//   retorno.appendChild(element);
-// }
-// teste("oiiii");
-
-//https://rickandmortyapi.com/api/character/?name=rick&status=alive
-//  ALL  https://rickandmortyapi.com/api/character
