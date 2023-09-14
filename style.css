@@ -50,9 +50,10 @@ body {
   margin-top: 5px;
   word-break: word;
 }
-/* #btn-nav {
+
+.btn-navegar {
   display: none;
-} */
+}
 
 .imag {
   border-radius: 5px;

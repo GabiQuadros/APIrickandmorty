@@ -47,7 +47,7 @@ function search() {
   const all = document.getElementById("allResult");
   const busca = document.getElementById("buscador");
   const retorno = document.getElementById("result");
-  const btnNav = document.getElementById("btn-nav");
+  const butonnavgate = document.getElementById("toNavegar");
 
   try {
     axios
@@ -55,7 +55,7 @@ function search() {
       .then((response) => {
         const result = response.data.results;
         all.style.display = "none";
-        btnNav.style.display = "inline";
+        butonnavgate.style.display = "inline";
 
         title.textContent = `${result[0].name}`;
         console.log("souche");
@@ -98,12 +98,15 @@ function searchToButtonCard(params) {
   const title = document.getElementById("heder-title");
   const all = document.getElementById("allResult");
   const retorno = document.getElementById("result");
+  const butonnavgate = document.getElementById("toNavegar");
+
   try {
     axios
       .get(`https://rickandmortyapi.com/api/character/?name=${params}`)
       .then((response) => {
         const result = response.data.results;
         all.style.display = "none";
+        butonnavgate.style.display = "inline";
         title.textContent = `${result[0].name}`;
         console.log("souche");
         console.log(result);
