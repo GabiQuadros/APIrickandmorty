@@ -47,6 +47,7 @@ function search() {
   const all = document.getElementById("allResult");
   const busca = document.getElementById("buscador");
   const retorno = document.getElementById("result");
+  const btnNav = document.getElementById("btn-nav");
 
   try {
     axios
@@ -54,6 +55,8 @@ function search() {
       .then((response) => {
         const result = response.data.results;
         all.style.display = "none";
+        btnNav.style.display = "inline";
+
         title.textContent = `${result[0].name}`;
         console.log("souche");
         console.log(result);
@@ -136,4 +139,8 @@ function searchToButtonCard(params) {
     element.innerText = `Dados não encontrados ${e}`;
     retorno.appendChild(element);
   }
+}
+
+function reloader() {
+  window.location.reload();
 }
