@@ -14,7 +14,7 @@ function allSearch() {
         img.setAttribute("alt", `${result[i].name}`);
         img.setAttribute("class", "imag");
         img.setAttribute("width", "150px");
-        img.setAttribute("height", "300px");
+        img.setAttribute("height", "200px");
         img.setAttribute("src", `${result[i].image}`);
 
         const name = document.createElement("p");
