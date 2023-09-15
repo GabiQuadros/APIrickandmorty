@@ -64,12 +64,17 @@
   </header>
   <body>
     <div class="container card">
-      <div class="row " id="result" >
-    </div>
-      <div class="row" id="allResult" class="all"></div>
+      <div class="row" id="result"></div>
+      
+    <div class="navgate-buttons">
+      <button type="button" class="btn btn-dark" onclick="prev()">Anterior</button>
+      <div class="cont-pag" id="page-number"></div>
+    <button type="button" class="btn btn-dark" onclick="next()">Proxímo</button>
+
     <div  class="btn-navegar" id="toNavegar">
       <button type="button" class="btn btn-dark" onclick="reloader()">voltar</button>
     </div>
+  </div>
   </body>
   <script src="index.js"></script>
 </html>
